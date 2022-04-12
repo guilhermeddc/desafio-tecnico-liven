@@ -11,30 +11,19 @@ import {moneyMask} from 'shared/utils/moneyMask';
 const Product: React.FC = () => {
   const {product: id} = useParams<{product: string}>();
 
-  const {products, setProducts} = useCart();
+  const {products, addNewProduct, addProduct} = useCart();
 
   const {data: product, isLoading} = useQuery(['product', id], () =>
     productService.getSingleProduct(id),
   );
 
   const handleAddToCart = useCallback(() => {
-    if (
-      products.filter((p) => p.product.id === Number(id)).length === 0 &&
-      product
-    ) {
-      setProducts([
-        ...products,
-        {product: {...product}, quantity: 1, value: product.price},
-      ]);
+    if (products.filter((p) => p.product.id === Number(id)).length === 0) {
+      addProduct(Number(id));
     } else if (product) {
-      const newProducts = products.map((p) =>
-        p.product.id === Number(id)
-          ? {...p, quantity: p.quantity + 1, value: p.value + product.price}
-          : p,
-      );
-      setProducts(newProducts);
+      addNewProduct(Number(id), product);
     }
-  }, [id, product, products, setProducts]);
+  }, [addNewProduct, addProduct, id, product, products]);
 
   if (isLoading) {
     return <LinearDeterminate />;

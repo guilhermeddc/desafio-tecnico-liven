@@ -1,5 +1,7 @@
 import React, {createContext, useCallback, useMemo, useState} from 'react';
 
+import {IProduct} from 'shared/services/api/productService';
+
 interface IAddToCart {
   product: {
     id: number;
@@ -18,6 +20,7 @@ export interface IContextCart {
   addProduct(id: number): void;
   removeProduct(id: number): void;
   deleteProduct(id: number): void;
+  addNewProduct(id: number, product: IProduct): void;
 }
 
 export const CartContext = createContext<IContextCart>({} as IContextCart);
@@ -44,6 +47,16 @@ export const CartProvider: React.FC = ({children}) => {
 
     return value;
   }, [products]);
+
+  const handleAddNewProduct = useCallback(
+    (id: number, product: IProduct) => {
+      setProducts([
+        ...products,
+        {product: {...product}, quantity: 1, value: product.price},
+      ]);
+    },
+    [products],
+  );
 
   const handleAddProduct = useCallback(
     (id: number) => {
@@ -84,6 +97,7 @@ export const CartProvider: React.FC = ({children}) => {
         addProduct: handleAddProduct,
         removeProduct: handleRemoveProduct,
         deleteProduct: handleDeleteProduct,
+        addNewProduct: handleAddNewProduct,
       }}>
       {children}
     </CartContext.Provider>
