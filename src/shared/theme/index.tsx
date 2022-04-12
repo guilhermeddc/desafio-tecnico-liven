@@ -41,8 +41,16 @@ export const theme = createTheme(
       },
       background: {
         default: '#F8F8F8',
-        paper: '#FFFFFF',
+        paper: '#FEFEFE',
       },
+    },
+    typography: {
+      fontFamily: `'Montserrat', sans-serif`,
+      fontSize: 14,
+      fontWeightLight: 300,
+      fontWeightRegular: 400,
+      fontWeightMedium: 500,
+      fontWeightBold: 700,
     },
   },
   ptBR,
