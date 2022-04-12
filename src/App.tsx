@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {QueryClientProvider} from 'react-query';
 
-function App() {
+import {CssBaseline, ThemeProvider} from '@mui/material';
+import {Routes} from 'routes';
+import {AppProvider} from 'shared/context';
+import {queryClient} from 'shared/services/queryClient';
+import {theme} from 'shared/theme';
+import 'shared/services/translationYup';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <AppProvider>
+          <Routes />
+          <CssBaseline />
+        </AppProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
-}
+};
 
 export default App;
