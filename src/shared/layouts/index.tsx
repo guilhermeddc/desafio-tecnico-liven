@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useQuery} from 'react-query';
+import {useNavigate} from 'react-router-dom';
 
 import {Box, Container, Stack, Toolbar} from '@mui/material';
 import {useCart} from 'shared/hooks';
@@ -15,6 +16,7 @@ export const LayoutBase: React.FC = ({children}) => {
   const [menuOption, setMenuOption] = useState('Shop all');
 
   const {cartQuantity} = useCart();
+  const navigate = useNavigate();
 
   const {data: categories} = useQuery('categories', () =>
     productService.getAllCategories(),
@@ -35,6 +37,7 @@ export const LayoutBase: React.FC = ({children}) => {
         cartQuantity={cartQuantity}
         onDrawerToggle={handleDrawerToggle}
         drawerWidth={drawerWidth}
+        onNavigateToCart={() => navigate('/cart')}
       />
 
       <Drawer

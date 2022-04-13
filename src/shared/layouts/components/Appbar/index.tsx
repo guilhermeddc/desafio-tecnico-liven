@@ -1,5 +1,4 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
 
 import {MenuRounded} from '@mui/icons-material';
 import {
@@ -15,19 +14,20 @@ interface IProps {
   drawerWidth: number;
   cartQuantity: number;
   onDrawerToggle(): void;
+  onNavigateToCart(): void;
 }
 
 export const Appbar: React.FC<IProps> = ({
   drawerWidth,
   cartQuantity,
   onDrawerToggle,
+  onNavigateToCart,
 }) => {
-  const navigate = useNavigate();
-
   return (
     <MuiAppBar
       position="fixed"
       elevation={0}
+      data-testid="app-bar"
       color="transparent"
       sx={{
         width: {sm: `calc(100% - ${drawerWidth}px)`},
@@ -58,7 +58,7 @@ export const Appbar: React.FC<IProps> = ({
         </Toolbar>
 
         <Toolbar>
-          <IconButton onClick={() => navigate('/cart')}>
+          <IconButton onClick={onNavigateToCart}>
             <Avatar sx={{bgcolor: 'primary.main'}}>{cartQuantity}</Avatar>
           </IconButton>
         </Toolbar>
