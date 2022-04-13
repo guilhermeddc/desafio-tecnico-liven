@@ -21,7 +21,7 @@ const Product: React.FC = () => {
     if (products.filter((p) => p.product.id === Number(id)).length === 0) {
       addProduct(Number(id));
     } else if (product) {
-      addNewProduct(Number(id), product);
+      addNewProduct(product);
     }
   }, [addNewProduct, addProduct, id, product, products]);
 

@@ -6,7 +6,6 @@ import {Routes} from 'routes';
 import {AppProvider} from 'shared/context';
 import {queryClient} from 'shared/services/queryClient';
 import {theme} from 'shared/theme';
-import 'shared/services/translationYup';
 
 const App: React.FC = () => {
   return (

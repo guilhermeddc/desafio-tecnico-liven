@@ -4,7 +4,7 @@ import {
   CartContext,
   CartProvider,
   IContextCart,
-} from 'shared/context/cartContext';
+} from 'shared/context/cartProvider';
 
 const useCart = (): IContextCart => {
   const context = useContext(CartContext);

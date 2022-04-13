@@ -13,14 +13,13 @@ interface IAddToCart {
 }
 
 export interface IContextCart {
-  products: IAddToCart[];
-  setProducts(value: IAddToCart[]): void;
   cartQuantity: number;
   cartTotalPrice: number;
+  addNewProduct(product: IProduct): void;
   addProduct(id: number): void;
   removeProduct(id: number): void;
   deleteProduct(id: number): void;
-  addNewProduct(id: number, product: IProduct): void;
+  products: IAddToCart[];
 }
 
 export const CartContext = createContext<IContextCart>({} as IContextCart);
@@ -49,7 +48,7 @@ export const CartProvider: React.FC = ({children}) => {
   }, [products]);
 
   const handleAddNewProduct = useCallback(
-    (id: number, product: IProduct) => {
+    (product: IProduct) => {
       setProducts([
         ...products,
         {product: {...product}, quantity: 1, value: product.price},
@@ -91,7 +90,6 @@ export const CartProvider: React.FC = ({children}) => {
     <CartContext.Provider
       value={{
         products,
-        setProducts,
         cartQuantity,
         cartTotalPrice,
         addProduct: handleAddProduct,
