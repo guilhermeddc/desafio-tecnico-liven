@@ -18,7 +18,7 @@ const Product: React.FC = () => {
   );
 
   const handleAddToCart = useCallback(() => {
-    if (products.filter((p) => p.product.id === Number(id)).length === 0) {
+    if (products.filter((p) => p.product.id === Number(id)).length > 0) {
       addProduct(Number(id));
     } else if (product) {
       addNewProduct(product);
