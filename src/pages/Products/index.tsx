@@ -1,18 +1,22 @@
 import React from 'react';
-import {useQuery} from 'react-query';
 import {useParams} from 'react-router-dom';
 
 import {Grid, Typography} from '@mui/material';
-import {LinearDeterminate, ProductCard} from 'shared/components';
-import {productService} from 'shared/services/api/productService';
+import {ErrorPage, LinearDeterminate, ProductCard} from 'shared/components';
+import {useFetchProductsForCategories} from 'shared/hooks';
 
 const Products: React.FC = () => {
   const {category} = useParams<{category: string}>();
 
-  const {data: products, isLoading} = useQuery(
-    ['products/categories', category],
-    () => productService.getProductsInCategory(category?.replace('-', ' ')),
-  );
+  const {
+    data: products,
+    isLoading,
+    isError,
+  } = useFetchProductsForCategories(category);
+
+  if (isError) {
+    return <ErrorPage queryKey="products/categories" />;
+  }
 
   if (isLoading) {
     return <LinearDeterminate />;

@@ -52,11 +52,11 @@ describe('CartProvider', () => {
     );
 
     fireEvent.click(getByText('Add1'));
-    expect(getByText('10')).toBeTruthy();
+    expect(getByText('100')).toBeTruthy();
     expect(getByText('1')).toBeTruthy();
 
     fireEvent.click(getByText('Add2'));
-    expect(getByText('30')).toBeTruthy();
+    expect(getByText('300')).toBeTruthy();
     expect(getByText('2')).toBeTruthy();
   });
 
@@ -96,19 +96,19 @@ describe('CartProvider', () => {
     );
 
     fireEvent.click(getByText('Add1'));
-    expect(getByText('Product Test 1')).toBeTruthy();
+    expect(getByText('Product 1')).toBeTruthy();
     expect(getByText('1')).toBeTruthy();
 
     fireEvent.click(getByText('+'));
-    expect(getByText('Product Test 1')).toBeTruthy();
+    expect(getByText('Product 1')).toBeTruthy();
     expect(getByText('2')).toBeTruthy();
 
     fireEvent.click(getByText('-'));
-    expect(getByText('Product Test 1')).toBeTruthy();
+    expect(getByText('Product 1')).toBeTruthy();
     expect(getByText('1')).toBeTruthy();
 
     fireEvent.click(getByText('Add2'));
     fireEvent.click(getByText('delete'));
-    expect(getByText('Product Test 2')).toBeTruthy();
+    expect(getByText('Product 2')).toBeTruthy();
   });
 });

@@ -4,6 +4,7 @@ exports[`ProductCard renders correctly 1`] = `
 <div>
   <div
     class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-63160j-MuiGrid-root"
+    data-testid="product-card-1"
     to="/product/1"
   >
     <div
@@ -11,16 +12,16 @@ exports[`ProductCard renders correctly 1`] = `
     >
       <div
         aria-label="Imagem do produto"
-        class="css-94a5y0-MuiStack-root"
+        class="css-o20i7w-MuiStack-root"
       >
         <div
           class="css-18sz23g-MuiStack-root"
         >
           <h6
-            aria-label="Product Test 1"
+            aria-label="Product 1"
             class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
           >
-            Product Test 1
+            Product 1
           </h6>
           <div
             class="css-fd7gp3-MuiStack-root"
@@ -28,7 +29,7 @@ exports[`ProductCard renders correctly 1`] = `
           <h4
             class="MuiTypography-root MuiTypography-h4 MuiTypography-alignCenter css-1yae2gn-MuiTypography-root"
           >
-            $10.00
+            $100.00
           </h4>
         </div>
       </div>

@@ -17,7 +17,7 @@ describe('ProductCard', () => {
   it('renders correctly with props', () => {
     render(<ProductCard product={product01} />);
 
-    expect(screen.getByText(/Product Test 1/)).toBeInTheDocument();
-    expect(screen.getByText(/10/)).toBeInTheDocument();
+    expect(screen.getByText(/Product 1/)).toBeInTheDocument();
+    expect(screen.getByText(/100/)).toBeInTheDocument();
   });
 });

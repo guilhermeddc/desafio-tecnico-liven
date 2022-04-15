@@ -17,8 +17,6 @@ describe('LayoutBase', () => {
       </QueryClientProvider>,
     );
 
-    screen.debug();
-
     expect(container).toBeInTheDocument();
     expect(screen.getByText(/Technical Challenge Liven/)).toBeInTheDocument();
     expect(screen.getAllByText(/Shop all/)[0]).toBeInTheDocument();

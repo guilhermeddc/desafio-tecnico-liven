@@ -1,15 +1,16 @@
 import React from 'react';
-import {useQuery} from 'react-query';
 
 import {Grid, Typography} from '@mui/material';
-import {LinearDeterminate} from 'shared/components';
+import {ErrorPage, LinearDeterminate} from 'shared/components';
 import {ProductCard} from 'shared/components/UI/ProductCard';
-import {productService} from 'shared/services/api/productService';
+import {useFetchProducts} from 'shared/hooks';
 
 const Home: React.FC = () => {
-  const {data: products, isLoading} = useQuery('products', () =>
-    productService.getAllProducts(15),
-  );
+  const {data: products, isLoading, isError} = useFetchProducts();
+
+  if (isError) {
+    return <ErrorPage queryKey="products" />;
+  }
 
   if (isLoading) {
     return <LinearDeterminate />;

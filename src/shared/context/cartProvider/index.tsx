@@ -2,7 +2,7 @@ import React, {createContext, useCallback, useMemo, useState} from 'react';
 
 import {IProduct} from 'shared/services/api/productService';
 
-interface IAddToCart {
+export interface IAddToCart {
   product: {
     id: number;
     title: string;

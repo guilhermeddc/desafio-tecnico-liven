@@ -1,4 +1,4 @@
-import {moneyMask} from './moneyMask';
+import {moneyMask} from '.';
 
 describe('moneyMask', () => {
   it('should return a string', () => {

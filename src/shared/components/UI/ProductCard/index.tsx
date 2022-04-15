@@ -17,6 +17,7 @@ export const ProductCard: React.FC<IProps> = ({product}) => {
       sm={6}
       md={4}
       key={product.id}
+      data-testid={`product-card-${product.id}`}
       component={NavLink}
       to={`/product/${product.id}`}
       sx={{textDecoration: 'none', color: 'unset'}}>

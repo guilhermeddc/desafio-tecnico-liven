@@ -1,11 +1,9 @@
 import React, {useCallback} from 'react';
-import {useQuery} from 'react-query';
 import {useParams} from 'react-router-dom';
 
 import {Button, Grid, Stack, Typography} from '@mui/material';
-import {LinearDeterminate} from 'shared/components';
-import {useCart} from 'shared/hooks';
-import {productService} from 'shared/services/api/productService';
+import {ErrorPage, LinearDeterminate} from 'shared/components';
+import {useCart, useFetchProduct} from 'shared/hooks';
 import {moneyMask} from 'shared/utils/moneyMask';
 
 const Product: React.FC = () => {
@@ -13,9 +11,7 @@ const Product: React.FC = () => {
 
   const {products, addNewProduct, addProduct} = useCart();
 
-  const {data: product, isLoading} = useQuery(['product', id], () =>
-    productService.getSingleProduct(id),
-  );
+  const {data: product, isLoading, isError} = useFetchProduct(id);
 
   const handleAddToCart = useCallback(() => {
     if (products.filter((p) => p.product.id === Number(id)).length > 0) {
@@ -24,6 +20,10 @@ const Product: React.FC = () => {
       addNewProduct(product);
     }
   }, [addNewProduct, addProduct, id, product, products]);
+
+  if (isError) {
+    return <ErrorPage queryKey="product" />;
+  }
 
   if (isLoading) {
     return <LinearDeterminate />;
