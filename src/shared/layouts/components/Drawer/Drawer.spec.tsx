@@ -8,26 +8,19 @@ jest.mock('react-router-dom', () => ({
 
 describe('Drawer', () => {
   it('renders correctly an capitalize links', () => {
-    const {getAllByText, debug} = render(
+    const {getAllByText} = render(
       <Drawer
         mobileOpen={false}
-        onDrawerToggle={() => {
-          //
-        }}
+        onDrawerToggle={() => null}
         categories={['hats', 'jackets', 'sneakers']}
-        onMenuClick={() => {
-          //
-        }}
+        onMenuClick={() => null}
         activeMenu={true}
         menuOption={'Shop all'}
         drawerWidth={400}
-        onActiveMenu={() => {
-          //
-        }}
+        onActiveMenu={() => null}
       />,
     );
 
-    debug();
     expect(getAllByText('Hats')).toBeTruthy();
     expect(getAllByText('Jackets')).toBeTruthy();
     expect(getAllByText('Sneakers')).toBeTruthy();

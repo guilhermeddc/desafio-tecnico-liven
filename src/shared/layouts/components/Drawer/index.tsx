@@ -83,7 +83,10 @@ export const Drawer: React.FC<IProps> = ({
             ))}
           </Stack>
 
-          <MenuSelected onClick={onActiveMenu} active={activeMenu}>
+          <MenuSelected
+            onClick={onActiveMenu}
+            data-testeid="active-menu"
+            active={activeMenu}>
             {menuOption}
           </MenuSelected>
         </Stack>
@@ -108,7 +111,7 @@ export const Drawer: React.FC<IProps> = ({
         sx={{
           display: {xs: 'block', sm: 'none'},
           '& .MuiDrawer-paper': {
-            bgcolor: 'background.default',
+            bgcolor: 'primary.main',
             border: 'none',
             boxSizing: 'border-box',
             width: '100%',
@@ -123,7 +126,7 @@ export const Drawer: React.FC<IProps> = ({
         sx={{
           display: {xs: 'none', sm: 'block'},
           '& .MuiDrawer-paper': {
-            bgcolor: 'background.default',
+            bgcolor: 'primary.main',
             border: 'none',
             boxSizing: 'border-box',
             width: drawerWidth,

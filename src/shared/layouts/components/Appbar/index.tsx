@@ -32,7 +32,7 @@ export const Appbar: React.FC<IProps> = ({
       sx={{
         width: {sm: `calc(100% - ${drawerWidth}px)`},
         ml: {sm: `${drawerWidth}px`},
-        bgcolor: 'background.default',
+        bgcolor: 'secondary.main',
       }}>
       <Stack
         p={3}

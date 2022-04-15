@@ -9,6 +9,7 @@ export const queryClient = new QueryClient({
         feedback(error.message, 'error');
       },
       retry: false,
+      refetchOnWindowFocus: false,
     },
   },
 });
