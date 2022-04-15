@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard renders correctly 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-63160j-MuiGrid-root"
+    to="/product/1"
+  >
+    <div
+      class="css-wgtysp-MuiStack-root"
+    >
+      <div
+        aria-label="Imagem do produto"
+        class="css-94a5y0-MuiStack-root"
+      >
+        <div
+          class="css-18sz23g-MuiStack-root"
+        >
+          <h6
+            aria-label="Product Test 1"
+            class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+          >
+            Product Test 1
+          </h6>
+          <div
+            class="css-fd7gp3-MuiStack-root"
+          />
+          <h4
+            class="MuiTypography-root MuiTypography-h4 MuiTypography-alignCenter css-1yae2gn-MuiTypography-root"
+          >
+            $10.00
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

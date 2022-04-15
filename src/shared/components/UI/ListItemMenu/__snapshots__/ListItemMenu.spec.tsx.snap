@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItemMenu renders correctly 1`] = `
+<div>
+  <div
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-padding MuiListItem-button css-11r3gg3-MuiButtonBase-root-MuiListItem-root"
+    tabindex="0"
+    to="/"
+  >
+    <div
+      class="MuiListItemText-root css-tlelie-MuiListItemText-root"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-xjy3u8-MuiTypography-root"
+      >
+        Home
+      </h6>
+    </div>
+    <span
+      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+    />
+  </div>
+</div>
+`;

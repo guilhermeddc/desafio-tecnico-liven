@@ -13,18 +13,15 @@ export const MenuSelected: React.FC<IProps> = ({onClick, active, children}) => {
     <Button
       onClick={onClick}
       startIcon={
-        <Stack>
-          {active ? (
-            <>
-              <ArrowDropDownRounded fontSize="large" sx={{mb: -1.4}} />
-              <ArrowDropUpRounded fontSize="large" sx={{mt: -1.4}} />
-            </>
-          ) : (
-            <>
-              <ArrowDropUpRounded fontSize="large" sx={{mb: -1.4}} />
-              <ArrowDropDownRounded fontSize="large" sx={{mt: -1.4}} />
-            </>
-          )}
+        <Stack direction={active ? 'column-reverse' : 'column'}>
+          <ArrowDropUpRounded
+            fontSize="large"
+            sx={active ? {mt: -1.4} : {mb: -1.4}}
+          />
+          <ArrowDropDownRounded
+            fontSize="large"
+            sx={active ? {mb: -1.4} : {mt: -1.4}}
+          />
         </Stack>
       }
       sx={{
