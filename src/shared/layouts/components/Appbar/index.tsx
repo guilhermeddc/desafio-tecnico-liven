@@ -58,7 +58,9 @@ export const Appbar: React.FC<IProps> = ({
         </Toolbar>
 
         <Toolbar>
-          <IconButton onClick={onNavigateToCart}>
+          <IconButton
+            onClick={onNavigateToCart}
+            data-testid="app-bar-icon-button">
             <Avatar sx={{bgcolor: 'primary.main'}}>{cartQuantity}</Avatar>
           </IconButton>
         </Toolbar>

@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
-import {useQuery} from 'react-query';
 import {useNavigate} from 'react-router-dom';
 
 import {Box, Container, Stack, Toolbar} from '@mui/material';
-import {useCart} from 'shared/hooks';
-import {productService} from 'shared/services/api/productService';
+import {useCart, useFetchCategories} from 'shared/hooks';
 
 import {Alert, Appbar, Drawer} from './components';
 
@@ -18,9 +16,7 @@ export const LayoutBase: React.FC = ({children}) => {
   const {cartQuantity} = useCart();
   const navigate = useNavigate();
 
-  const {data: categories} = useQuery('categories', () =>
-    productService.getAllCategories(),
-  );
+  const {data: categories} = useFetchCategories();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

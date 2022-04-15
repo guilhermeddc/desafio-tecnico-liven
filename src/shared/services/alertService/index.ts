@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import {Subject} from 'rxjs';
 
 export type AlertTypes =
@@ -11,7 +12,6 @@ export type AlertTypes =
 interface IAlert {
   message: string;
   type: AlertTypes;
-  // eslint-disable-next-line @typescript-eslint/ban-types
   onClose?: Function;
 }
 
@@ -22,7 +22,6 @@ export const AlertService = alertSubject.asObservable();
 export const feedback = (
   message: string,
   type: AlertTypes,
-  // eslint-disable-next-line @typescript-eslint/ban-types
   onClose?: Function,
 ) => {
   alertSubject.next({
