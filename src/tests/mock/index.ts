@@ -32,12 +32,12 @@ export const products: IProduct[] = [product01, product02];
 export const productsInCart: IAddToCart[] = [
   {
     product: {...product01},
-    quantity: 1,
+    quantity: 2,
     value: product01.price,
   },
   {
     product: {...product02},
-    quantity: 2,
+    quantity: 1,
     value: product02.price,
   },
 ];

@@ -67,6 +67,7 @@ const Cart: React.FC = () => {
                             size="small"
                             aria-label="small button group">
                             <Button
+                              data-testid={`remove-product-${p.product.id}`}
                               onClick={() => removeProduct(p.product.id)}
                               disabled={p.quantity === 1}>
                               <RemoveRounded />
@@ -74,7 +75,9 @@ const Cart: React.FC = () => {
 
                             <Button>{p.quantity}</Button>
 
-                            <Button onClick={() => addProduct(p.product.id)}>
+                            <Button
+                              data-testid={`add-product-${p.product.id}`}
+                              onClick={() => addProduct(p.product.id)}>
                               <AddRounded />
                             </Button>
                           </ButtonGroup>
@@ -82,7 +85,9 @@ const Cart: React.FC = () => {
                       </TableCell>
 
                       <TableCell>
-                        <Button onClick={() => deleteProduct(p.product.id)}>
+                        <Button
+                          data-testid={`delete-product-${p.product.id}`}
+                          onClick={() => deleteProduct(p.product.id)}>
                           Delete
                         </Button>
                       </TableCell>
@@ -126,10 +131,14 @@ const Cart: React.FC = () => {
       ) : (
         <>
           <Grid item xs={12}>
-            <Stack spacing={8} onClick={() => navigate('/')}>
+            <Stack spacing={8}>
               <Typography variant="h2">Your bag is empty</Typography>
 
-              <Button color="secondary" size="large" sx={{maxWidth: 170}}>
+              <Button
+                color="secondary"
+                size="large"
+                sx={{maxWidth: 170}}
+                onClick={() => navigate('/')}>
                 Return to home
               </Button>
             </Stack>
