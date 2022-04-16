@@ -14,4 +14,5 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{tsx|ts}', '!src/**/*.{d.ts,spec.tsx}'],
   coverageReporters: ['lcov', 'json'],
+  setupFilesAfterEnv: ['@testing-library/react/cleanup-after-each'],
 };
