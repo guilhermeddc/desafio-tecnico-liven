@@ -18,10 +18,10 @@ exports[`Cart should render products length is greater than zero 1`] = `
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
-        class="MuiTableContainer-root css-rorn0c-MuiTableContainer-root"
+        class="MuiTableContainer-root css-1ianzir-MuiTableContainer-root"
       >
         <table
-          class="MuiTable-root css-quj9j6-MuiTable-root"
+          class="MuiTable-root css-xn1fu9-MuiTable-root"
         >
           <thead
             class="MuiTableHead-root css-15wwp11-MuiTableHead-root"

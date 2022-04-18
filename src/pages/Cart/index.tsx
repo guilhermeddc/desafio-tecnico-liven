@@ -33,8 +33,8 @@ const Cart: React.FC = () => {
           </Grid>
 
           <Grid item xs={12}>
-            <TableContainer>
-              <Table sx={{minWidth: 650}}>
+            <TableContainer sx={{width: {xs: '80vw', md: '100%'}}}>
+              <Table sx={{minWidth: 650, overflowX: 'scroll'}}>
                 <TableHead>
                   <TableRow>
                     <TableCell>Product</TableCell>
